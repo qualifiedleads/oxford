@@ -104,6 +104,7 @@ main section.description .form-box label {
 }
 main section.description .form-box input[type="text"],
 main section.description .form-box input[type="email"],
+main section.description .form-box input[type="number"],
 main section.description .form-box input[type="tel"]
  {
     width: 100%;
@@ -111,8 +112,14 @@ main section.description .form-box input[type="tel"]
     padding: 5px;
     font-size: 90%;
 }
+main section.description .form-box select {
+    width: 184px;
+    border: 1px solid #999;
+    padding: 5px;
+    font-size: 90%;
+    background-color: transparent;
+}
 main section.description .form-box input[type="radio"] {
-    transform: scale(1.25,1.25);
     vertical-align: middle;
     text-shadow: 0 0 0;
     -moz-osx-font-smoothing: grayscale;
@@ -128,13 +135,32 @@ main section.description .form-box .form-field {
 }
 main section.description .form-box .form-field label.box {
     width: calc(50% - 4px);
-    border: 1px solid transparent;
+    border: 1px solid #999;
     padding: 5px;
     text-align: center;
     line-height: 1.4;
-    display: block;
     text-align: left;
     font-weight: normal;
+    display: inline-block;
+}
+main section.description .form-box .form-field label.box:first-child {
+    margin-right: 4px;
+}
+main section.description .form-box .form-field label.box:last-child {
+    margin-left: 4px;
+}
+main section.description .field-group {
+    width: 100%;
+    display: table;
+}
+main section.description .field-group .col {
+    display: table-cell;
+}
+main section.description .field-group .col-left {
+    width: 80px;
+}
+main section.description .field-group .col-right {
+    text-align: right;
 }
 main section.description .pie-chart {
     width: 235px;

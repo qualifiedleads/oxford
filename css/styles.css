@@ -26,6 +26,9 @@ h2 {
 h3 {
     font-size: 160%;
 }
+:focus {
+    outline: 0;
+}
 .font-blue {
     color: #006DA6;
 }
