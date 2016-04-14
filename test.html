@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test</title>
+    <script type="text/javascript" src="js/jquery-2.2.1.min.js"></script>
+</head>
+<body>
+    <script>
+        
+    function startOCA() {
+        $.ajax({
+            url: 'http://www.oxfordcapacityanalysis.org/oca-service.action', 
+            dataType: 'jsonp', 
+            data: {
+                id: 1, 
+                method: 'startOCATest', 
+                params: JSON.stringify({ 
+                    'fname': 'John Doe', 
+                    'lname': 'Last name', 
+                    'email': 'andrastompa@gmail.com', 
+                    'age': '20', 
+                    'gender': 'male', 
+                    'zipcode': '12345', 
+                    'phone': '323-960-3550', 
+                    'country': 'US', 
+                    'countryname': 'United States', 
+                    'orgid': 'tpa', 
+                })
+            }, 
+            success: function(data) { 
+                if (data.error) return alert('Error starting OCA: ' + data.error); 
+                console.log('OCA started, OCA Id: ' + data.result); 
+                location = 'http://www.oxfordcapacityanalysis.org/questions.html'; 
+            } 
+        });
+    }
+
+    </script>
+</body>
+</html>
