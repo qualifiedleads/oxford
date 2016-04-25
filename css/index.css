@@ -52,7 +52,7 @@ main section.description #test_description h2 {
 }
 main section.description #test_description p {
     margin-top: 15px;
-    text-align: justify;
+    text-align: left;
 }
 main section.description #test_form {
     width: calc(35% - 5px);
