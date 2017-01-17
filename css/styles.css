@@ -78,6 +78,17 @@ h3 {
     background-image: -ms-linear-gradient(bottom, rgb(17,61,143) 7%, rgb(45,98,204) 54%, rgb(99,139,219) 77%);
     background-image: -webkit-gradient( linear, left bottom, left top, color-stop(0.07, rgb(17,61,143)), color-stop(0.54, rgb(45,98,204)), color-stop(0.77, rgb(99,139,219)));
 }
+[disabled].glass-button,
+[disabled].glass-button {
+    color: rgba(0,0,0,0.5);
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.6);
+    background-image: linear-gradient(to bottom, rgba(208,208,208,1) 0%, rgba(176,176,176,1) 100%);
+    background-image: -moz-linear-gradient(top, rgba(208,208,208,1) 0%, rgba(176,176,176,1) 100%);
+    background-image: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(208,208,208,1)), color-stop(100%, rgba(176,176,176,1)));
+    background-image: -webkit-linear-gradient(top, rgba(208,208,208,1) 0%, rgba(176,176,176,1) 100%);
+    background-image: -o-linear-gradient(top, rgba(208,208,208,1) 0%, rgba(176,176,176,1) 100%);
+    background-image: -ms-linear-gradient(top, rgba(208,208,208,1) 0%, rgba(176,176,176,1) 100%);
+}
 header, main, footer
 {
     max-width: 960px;

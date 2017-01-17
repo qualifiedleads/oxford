@@ -31,8 +31,9 @@ $(document).ready(function(){
         //console.log(values_final);
 
         // Ajax submit
-        $('#register_form input').attr("disabled","true");
-        $('#register_form select').attr("disabled","true");
+        $('#register_form input').prop("disabled",true);
+        $('#register_form select').prop("disabled",true);
+        $('#register_form button[type="submit"]').text("Wait...").prop("disabled",true);
         $.ajax({
             url: 'http://www.oxfordcapacityanalysis.org/oca-service.action', 
             dataType: 'jsonp', 
@@ -43,8 +44,9 @@ $(document).ready(function(){
             }, 
             success: function(data) { 
                 if (data.error){
-                    $('#register_form input').removeAttr("disabled");
-                    $('#register_form select').removeAttr("disabled");
+                    $('#register_form input').prop("disabled",false);
+                    $('#register_form select').prop("disabled",false);
+                    $('#register_form button[type="submit"]').text("START TEST").prop("disabled",false);
                     return alert('Error starting OCA: ' + data.error);
                 }
                 else{
