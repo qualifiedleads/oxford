@@ -49,8 +49,8 @@ $(document).ready(function(){
                 }
                 else{
                     //console.log('OCA started, OCA Id: ' + data.result);
-                    goog_report_conversion('http://www.oxfordcapacityanalysis.org/questions.html');
-                    //top.location = 'http://www.oxfordcapacityanalysis.org/questions.html';
+                    //goog_report_conversion('http://www.oxfordcapacityanalysis.org/questions.html');
+                    top.location = 'http://www.oxfordcapacityanalysis.org/questions.html';
                 } 
             } 
         });
