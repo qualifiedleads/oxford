@@ -18,6 +18,7 @@ $(document).ready(function(){
         $('#register_form input[name="fname"]').val(fname);
         $('#register_form input[name="lname"]').val(lname);
         
+        var values_raw = $('#register_form').serialize();
         var values = $('#register_form').serializeArray();
         var values_array = [];
         var values_final;
@@ -31,9 +32,6 @@ $(document).ready(function(){
         //console.log(values_final);
 
         // Ajax submit
-        $('#register_form input').prop("disabled",true);
-        $('#register_form select').prop("disabled",true);
-        $('#register_form button[type="submit"]').text("Wait...").prop("disabled",true);
         $.ajax({
             url: 'http://www.oxfordcapacityanalysis.org/oca-service.action', 
             dataType: 'jsonp', 
@@ -42,7 +40,7 @@ $(document).ready(function(){
                 method: 'startOCATest', 
                 params: values_final
             }, 
-            success: function(data) { 
+            success: function(data) {
                 if (data.error){
                     $('#register_form input').prop("disabled",false);
                     $('#register_form select').prop("disabled",false);
@@ -50,12 +48,34 @@ $(document).ready(function(){
                     return alert('Error starting OCA: ' + data.error);
                 }
                 else{
-                    console.log('OCA started, OCA Id: ' + data.result);
-                    goog_report_conversion('http://www.oxfordcapacityanalysis.org/questions.html');
+                    $.ajax({
+                        method: 'GET',
+                        url: 'https://script.google.com/macros/s/AKfycbzI_ahPiBAm1HaBOijSbJGsDfFmApdtORhoqZF8tdtZyW-HMgI/exec',
+                        data: values_raw,
+                        error: function(jqXHR,textStatus,errorThrown){
+                            //console.log("Failed to load content.", "Error "+jqXHR.status);
+                            console.log('OCA started, OCA Id: ' + data.result);
+                            $('#register_form input').prop("disabled",false);
+                            $('#register_form select').prop("disabled",false);
+                            $('#register_form button[type="submit"]').text("Wait...").prop("disabled",false);
+                            goog_report_conversion('http://www.oxfordcapacityanalysis.org/questions.html');
+                        },
+                        success: function(response) {
+                            console.log('OCA started, OCA Id: ' + data.result);
+                            $('#register_form input').prop("disabled",false);
+                            $('#register_form select').prop("disabled",false);
+                            $('#register_form button[type="submit"]').text("Wait...").prop("disabled",false);
+                            goog_report_conversion('http://www.oxfordcapacityanalysis.org/questions.html');
+                        }
+                    });
+                    
                     //top.location = 'http://www.oxfordcapacityanalysis.org/questions.html';
                 } 
             } 
         });
+        //$('#register_form input').prop("disabled",true);
+        //$('#register_form select').prop("disabled",true);
+        $('#register_form button[type="submit"]').text("Wait...").prop("disabled",true);
     }
     $("#register_form").paminta(submit_fx);
 });
