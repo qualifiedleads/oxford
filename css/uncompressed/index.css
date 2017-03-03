@@ -42,13 +42,17 @@ main section p {
     margin-top: 10px;
 }
 /* -- */
-main section.description #test_description {
-    width: 65%;
-    display: inline-block;
+main section.description {
     overflow: auto;
 }
-main section.description #test_description h2 {
-    /*line-height: 1;*/
+main section.description #test_description,
+main section.description #test_form {
+    display: block;
+    float: left;
+    overflow: auto;
+}
+main section.description #test_description {
+    width: 65%;
 }
 main section.description #test_description p {
     margin-top: 15px;
@@ -57,7 +61,6 @@ main section.description #test_description p {
 main section.description #test_form {
     width: calc(35% - 5px);
     min-width: 230px;
-    display: inline-block;
 }
 main section.description .form-box {
     margin-left: 30px;
