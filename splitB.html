@@ -44,17 +44,8 @@
 				<div id="test_form">
                     <div class="form-box">
                         
-                        <div class="privacy-info-box">
-                            
-                            <!-- <div class="box-right">
-                                <a href="#">
-                                    Privacy Info &#9432;
-                                </a>
-                                <p>
-                                    Your information will only be used for the purpose of administering this personality test and evaluation. You also have the option of receiving more information on Scientology. Your information will never be sold or otherwise given to a third party. If at any time you wish to no longer receive email from us, simply use the link provided at the bottom of the message. Feel free to review our Privacy Policy for further details.
-                                </p>
-                            </div> -->
-                            
+                        <div class="promo-info-box">
+                            only <span id="trials_count"><!-- <span>3</span><span>5</span><span>0</span> --></span> trials available!*
                         </div>
                         
                         <div class="form-content">
@@ -64,6 +55,7 @@
                                 <input type="hidden" name="country" value="US" />
                                 <input type="hidden" name="countryname" value="United States" />
                                 <input type="hidden" name="zipcode" value="0" />
+                                <input type="hidden" name="orgid" value="tpa" />
                                 <div class="form-field">
                                     <label>Name</label><br>
                                     <input type="text" id="full_name" placeholder="First & Last" data-paminta="first_last_name" />
@@ -100,13 +92,18 @@
                                 <div class="form-field">
                                     <button type="submit" class="glass-button">START TEST</button>
                                 </div>
-                                <input type="hidden" name="orgid" value="tpa" />
+                                <div class="security-seal">
+                                    <div><img src="images/secr.png"></div>
+                                    <div>
+                                        <img src="images/mcafee.png">&nbsp;<img src="images/symantec.png">
+                                    </div>
+                                </div>
                             </form>
                         </div>
                     </div>
                 </div>
             </section>
-			   <section class="what-makes-it-unique">
+			<section class="what-makes-it-unique">
                 <h2>WHAT THE OXFORD TEST CAN <b>DO FOR YOU?</b></h2>
                 <p>
                     Specific results you will see include:
@@ -140,9 +137,6 @@
                     <li>Know your strengths and how to increase them so that you can get more out of life.</li>
                 </ul>
             </section>
-			
-			
-			
             <section  id="how-it-works" class="how-it-works">
                 <h2>HOW IT <b>WORKS</b></h2>
                 <ul>
@@ -189,11 +183,10 @@
                     </li>
                 </ul>
             </section>
-         
             <section id="personal-success" class="personal-success">
                 <h2>Real People <b>Real Successes</b></h2>
                 <ul>
-				 <li>
+                    <li>
                         <div class="image">
                             <img src="images/success-3.jpg" />
                         </div>
@@ -231,7 +224,6 @@
                             </p>
                         </div>
                     </li>
-                   
                     <li>
                         <div class="image">
                             <img src="images/success-4.jpg" />
@@ -267,6 +259,9 @@
                     </div>
                 </div>
             </section>
+            <section class="cta-block">
+                <a href="#test_form" class="cta-button">Start Test</a>
+            </section>
         </main>
         <footer style="clear:both">
             <div class="copyright">
@@ -281,30 +276,124 @@
 
             </nav>
         </footer>
+        <div id="scroll_notify" class="active">
+            <p>12 others are viewing this offer right now - <span id="offer_timer">00:00</span></p>
+            <p><a href="#test_form">Start Your Test Now!</a></p>
+            <span class="close">x</span>
+        </div>
         <style>
-            section.description,
-            section.how-it-works,
-            section.what-makes-it-unique,
-            section.the-real-you,
-            section.personal-success,
-            section.questionnaire
-            {
-                transition: all 500ms ease;
-                display: block;
+            @import url('https://fonts.googleapis.com/css?family=PT+Sans+Narrow');
+            main section.description .form-box .form-content {
+                padding: 12px 12px 12px;
             }
-            section.questionnaire {
-                opacity: 0;
-                display: none;
+            .promo-info-box {
+                text-transform: uppercase;
+                padding: 15px 8px;
+                color: white;
+                background-color: #006DA6;
+                font-size: 20px;
+                font-family: "PT Sans Narrow", sans-serif;
+                text-align: center;
+            }
+            .promo-info-box #trials_count span {
+                display: inline-block;
+                background-color: rgba(0,0,0,1);
+                padding: 5px;
+                vertical-align: middle;
+                margin-left: 4px;
+                border-radius: 4px;
+                color: #ff2005;
+                font-size: 16px;
+            }
+            .promo-info-box #trials_count span:first-child {
+                margin-left: 0px;
+            }
+            #register_form .glass-button {
+                animation: pulse 1.5s infinite;
+                -webkit-animation: pulse 1.5s infinite;
+            }
+            #scroll_notify {
+                position: fixed;
+                bottom: 15px; left: 15px;
+                padding: 15px;
+                background-color: rgba(0,0,0,0.8);
+                font-size: 14px;
+                border-radius: 5px;
+                text-align: center;
+                transition: opacity 300ms ease;
+                -webkit-transition: opacity 300ms ease;
+                display: none; opacity: 0;
+                z-index: -9;
+            }
+            #scroll_notify.active {
+                display: block;
+                z-index: 9;
+            }
+            #scroll_notify span.close {
+                width: 18px;
+                height: 18px;
+                line-height: 18px;
+                font-size: 12px;
+                border-radius: 50%;
+                color: red;
+                background-color: white;
+                box-shadow: 0 0 6px rgba(0, 0, 0, 0.59);
+                position: absolute;
+                top: -9px; left: -9px;
+                cursor: pointer;
+            }
+            #scroll_notify p:first-child {
+                color: #35c3ea;
+                margin-bottom: 4px;
+            }
+            #scroll_notify a {
+                color: white;
+                text-decoration: underline;
+                display: inline-block;
+            }
+            #scroll_notify a:hover {
+                transform: scale(1.05);
+                font-weight: bold;
+            }
+            .security-seal {
+                margin-top: 20px;
+            }
+            .security-seal img {
+                max-height: 45px;
+            }
+            .security-seal img:first-child {
+                margin-right: 8px;
+            }
+            .security-seal div {
+                text-align: center;
+            }
+            @-webkit-keyframes pulse{from,to{-webkit-transform:scale3d(1,1,1);transform:scale3d(1,1,1)}50%{-webkit-transform:scale3d(1.05,1.05,1.05);transform:scale3d(1.05,1.05,1.05)}}@keyframes pulse{from,to{-webkit-transform:scale3d(1,1,1);transform:scale3d(1,1,1)}50%{-webkit-transform:scale3d(1.05,1.05,1.05);transform:scale3d(1.05,1.05,1.05)}}
+            section.cta-block {
+                text-align: center;
+                overflow: visible !important;
+            }
+            section.cta-block a.cta-button:hover {
+                background-color: #007DB6;
+            }
+            section.cta-block a.cta-button {
+                color: white;
+                font-weight: bold;
+                text-transform: uppercase;
+                background-color: #006DA6;
+                display: inline-block;
+                padding: 10px 40px;
+                animation: pulse 1.5s infinite;
+                border-radius: 8px;
+                -webkit-animation: pulse 1.5s infinite;
+                font-size: 1.4em;
             }
         </style>
         <!-- Dependencies -->
         <script src="js/jquery-2.2.1.min.js"></script>
         <script src="js/notify.min.js"></script>
         <script src="js/paminta.js"></script>
-        <!-- Google Code for Personality test Conversion Page
-        In your html page, add the snippet and call
-        goog_report_conversion when someone clicks on the
-        chosen link or button. -->
+        <!-- Google Code for Personality test Conversion Page In your html page, add the snippet
+        and call goog_report_conversion when someone clicks on the chosen link or button. -->
         <script type="text/javascript">
               /* <![CDATA[ */
               goog_snippet_vars = function() {
@@ -338,9 +427,13 @@
             $(window).scroll(function(){
                 if($(this).scrollTop() > 133){
                     $("nav.header-docker").addClass("header-docker-fixed");
-                }
-                else{
+                }else{
                     $("nav.header-docker").removeClass("header-docker-fixed");
+                }
+                if($(this).scrollTop() > 600){
+                    $('#scroll_notify.active').css({'opacity':'1'})
+                }else{
+                    $('#scroll_notify.active').css({'opacity':'0'});
                 }
             });
             $("nav.header-docker a").click(function(){
@@ -348,11 +441,55 @@
                 var offset = $("#"+link_id).offset().top;
                 $('html,body').stop().animate({scrollTop:offset}, '500', 'swing', null);
             });
+            $('a[href="#test_form"]').click(function(){
+                var link_id = this.href.split('#')[1];
+                var offset = $("#"+link_id).offset().top - 25;
+                $('html,body').stop().animate({scrollTop:offset}, '500', 'swing', null);
+            });
             // Form country selection update.
             $('#register_form select[name="country"]').change(function(){
                 var selected = $(this).find("option:selected")[0];
                 $('#register_form input[name="countryname"').val(selected.innerText);
-            })
+            });
+
+            // Trials remaining counter.
+            (function(){
+                var one        = 0;
+                var ten        = 5;
+                var hundered   = 3;
+                var intervalId = setInterval(time, 5);
+                function time(){
+                    one--;
+                    if(one == -1) {ten -= 1; one = 0+9;}
+                    if(ten == -1) {hundered -= 1; ten = 0+9;}
+                    var wholeNum = hundered+''+ten+''+one;
+                    if(wholeNum == 167) clearInterval(intervalId);
+                    $('#trials_count').html('<span>'+hundered+'</span><span>'+ten+'</span><span>'+one+'</span>');
+                }
+            }());
+            // Offer timer.
+            (function(){
+                $('#scroll_notify .close').on('click',function(){
+                    $('#scroll_notify').removeClass('active');
+                });
+                var seconds = 0;
+                var counter = setInterval(addTime, 1000);
+                function formatTime(pure_seconds){
+                    var minutes = Math.floor(pure_seconds/60);
+                        minutes = (String(minutes).length > 1)? minutes : '0'+minutes;
+                    var seconds = Number(pure_seconds%60);
+                        seconds = (String(seconds).length > 1)? seconds : '0'+seconds;
+                    return minutes+':'+seconds;
+                }
+                function addTime(){
+                    if(seconds < 3599){
+                        seconds++;
+                        $('#offer_timer').html(formatTime(seconds));
+                    }else{
+                        clearInterval(counter);
+                    }
+                }
+            }());
         </script>
     </body>
 </html>
