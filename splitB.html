@@ -463,7 +463,7 @@
                     if(one == -1) {ten -= 1; one = 0+9;}
                     if(ten == -1) {hundered -= 1; ten = 0+9;}
                     var wholeNum = hundered+''+ten+''+one;
-                    if(wholeNum == 167) clearInterval(intervalId);
+                    if(wholeNum == 9) clearInterval(intervalId);
                     $('#trials_count').html('<span>'+hundered+'</span><span>'+ten+'</span><span>'+one+'</span>');
                 }
             }());
