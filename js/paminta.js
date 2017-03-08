@@ -43,21 +43,28 @@ $.fn.paminta = function(callback){
 
             /* Validate Full name */
             if($(this).attr('data-paminta') == "first_last_name"){
-                if($.trim(field.val()) == ""){
+                var first_last_name = $.trim(field.val())
+                if(first_last_name.length == 0){
                     field.trigger("focus").notify("This field is required", notify_style);
                     setTimeout(function(){field.addClass("paminta-blow")},1);
                     errors++;
                     return false;
                 }
                 else{
-                    if($.trim(field.val()).length < 3){
+                    if(first_last_name.length < 3){
                         field.trigger("focus").notify("Too short", notify_style);
                         setTimeout(function(){field.addClass("paminta-blow")},1);
                         errors++;
                         return false;
                     }
-                    else if(($.trim(field.val()).split(' ')).length == 1){
+                    else if((first_last_name.split(' ')).length == 1){
                         field.trigger("focus").notify("Last name is required", notify_style);
+                        setTimeout(function(){field.addClass("paminta-blow")},1);
+                        errors++;
+                        return false;
+                    }
+                    else if((first_last_name.split(' '))[1].length < 2){
+                        field.trigger("focus").notify("Last name is too short", notify_style);
                         setTimeout(function(){field.addClass("paminta-blow")},1);
                         errors++;
                         return false;

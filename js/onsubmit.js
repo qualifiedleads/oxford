@@ -29,7 +29,25 @@ $(document).ready(function(){
 
         values_final = '{'+values_array.join(',')+'}';
         values_final = JSON.stringify(JSON.parse(values_final));
-        //console.log(values_final);
+        
+        function getLocaleDateTime(){
+            var now  = new Date();
+            var YYYY = now.getFullYear();
+            var MM   = String(now.getMonth()+1).length > 1? now.getMonth()+1 : '0'+String(now.getMonth()+1);
+            var DD   = String(now.getDate()).length > 1? now.getDate() : '0'+String(now.getDate());
+            var hh   = String(now.getHours()).length > 1? now.getHours() : '0'+String(now.getHours());
+            var mm   = String(now.getMinutes()).length > 1? now.getMinutes() : '0'+String(now.getMinutes());
+            var ss   = String(now.getSeconds()).length > 1? now.getSeconds() : '0'+String(now.getSeconds());
+            var tz   = now.getTimezoneOffset()/60;
+            var sign = "";
+
+            if(tz < 0) sign = '+'; if(tz > 0) sign = '-';
+            tz = String(Math.abs(tz)).length > 1? sign+Math.abs(tz)+':00' : sign+'0'+Math.abs(tz)+':00';
+
+            var format = YYYY+'-'+MM+'-'+DD+' '+hh+':'+mm+':'+ss+' UTC'+tz;
+
+            return format;
+        }
 
         // Ajax submit
         $.ajax({
@@ -51,7 +69,7 @@ $(document).ready(function(){
                     $.ajax({
                         method: 'GET',
                         url: 'https://script.google.com/macros/s/AKfycbzI_ahPiBAm1HaBOijSbJGsDfFmApdtORhoqZF8tdtZyW-HMgI/exec',
-                        data: values_raw,
+                        data: values_raw+'&date='+getLocaleDateTime(),
                         error: function(jqXHR,textStatus,errorThrown){
                             //console.log("Failed to load content.", "Error "+jqXHR.status);
                             console.log('OCA started, OCA Id: ' + data.result);
