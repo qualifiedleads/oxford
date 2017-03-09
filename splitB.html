@@ -6,6 +6,60 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
         <title>Oxford Personality Test - Scientology Tampa</title>
         <link rel="stylesheet" href="css/combined-styles.min.css" />
+        <style type="text/css">
+            section.the-real-you {
+                overflow: auto;
+            }
+            section.the-real-you ul {
+                display: block;
+                width: 50%;
+                margin-bottom: 10px;
+                float: left;
+            }
+            section.the-real-you li {
+                margin-bottom: 5px;
+                list-style-type: none;
+                padding-left: 20px;
+            }
+            section.the-real-you li:before {
+                content: '\26AB';
+                position: relative;
+                left: -15px;
+            }
+            section.what-makes-it-unique .figure {
+                width: 290.5px;
+                float: right;
+                padding: 8px;
+                border: 1px dotted #000;
+                margin-right: 5px;
+                margin-top: 15px;
+            }
+            section.what-makes-it-unique .figure .title {
+                color: black;
+                font-size: 15px;
+                display: inline;
+            }
+            section.what-makes-it-unique .figure img {
+                float: right;
+                width: 35%;
+                margin-left: 5px;
+            }
+            section.what-makes-it-unique .figure .body {
+                font-size: 12px;
+                margin-top: 5px !important;
+            }
+            @media (max-width: 650px){
+                section.the-real-you ul {
+                    width: 100%;
+                }
+                section.the-real-you ul.col-left {
+                    margin-bottom: 0px !important;
+                }
+                section.the-real-you ul.col-right {
+                    margin-top: 0px !important;
+                }
+            }
+        </style>
     </head>
     <body>
         <header>
@@ -105,6 +159,14 @@
             </section>
 			<section class="what-makes-it-unique">
                 <h2>WHAT THE OXFORD TEST CAN <b>DO FOR YOU?</b></h2>
+                <div class="figure">
+                    <h4 class="title">Title</h4>
+                    <img src="images/head.jpg">
+                    <p class="body">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        
+                    </p>
+                </div>
                 <p>
                     Specific results you will see include:
 					
@@ -128,18 +190,21 @@
             </section>
             <section class="the-real-you">
                 <h2><b>Discover</b> your Future:</h2>
-               <ul>
-				<li>Stability</li>
-				<li>Happiness</li>
-				<li>Composure</li>
-				<li>Certainty</li>
-				<li>Activeness</li>
-				<li>Assertiveness</li>
-				<li>Responsible Behavior</li>
-				<li>Ability to Correctly Estimate</li>
-				<li>Appreciation</li>
-				<li>Communication Level</li>
-				</ul>
+                <ul class="col-left">
+                    <li>Stability</li>
+                    <li>Happiness</li>
+                    <li>Composure</li>
+                    <li>Certainty</li>
+                    <li>Activeness</li>
+                    
+                </ul>
+                <ul class="col-right">
+                    <li>Assertiveness</li>
+                    <li>Responsible Behavior</li>
+                    <li>Ability to Correctly Estimate</li>
+                    <li>Appreciation</li>
+                    <li>Communication Level</li>
+                </ul>
             </section>
             <section  id="how-it-works" class="how-it-works">
                 <h2>HOW IT <b>WORKS</b></h2>
@@ -193,8 +258,8 @@
                     <li>
                         <div class="image">
                             <img src="images/success-3.jpg" />
-                        </div>
-						<div class="text">
+                        </div><!--
+						--><div class="text">
                             <h4> Cynthia, Hairdresser: </h4>
                             <p>
                                 <blockquote>
