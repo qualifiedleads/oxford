@@ -150,7 +150,7 @@
                                     </div>
                                 </div>
                                 <div class="form-field">
-                                    <button type="submit" class="glass-button">START TEST</button>
+                                    <button type="submit" class="pink-button">START TEST</button>
                                 </div>
                                 <div class="security-seal">
                                     <div><img src="images/secr.png"></div>
@@ -363,7 +363,8 @@
                 text-transform: uppercase;
                 padding: 15px 8px;
                 color: white;
-                background-color: #006DA6;
+                /*background-color: #006DA6;*/
+                background-color: #f2008e;
                 font-size: 20px;
                 font-family: "PT Sans Narrow", sans-serif;
                 text-align: center;
@@ -381,9 +382,28 @@
             .promo-info-box #trials_count span:first-child {
                 margin-left: 0px;
             }
-            #register_form .glass-button {
+            #register_form .pink-button {
+                border-radius: 9px;
+                color: #FFF;
+                font-size: 21px;
+                font-weight: 700;
+                opacity: .9;
+                padding: 8px 15px;
+                text-align: center;
+                border-style: none;
+                background: #ed2d83;
+                background: -moz-linear-gradient(top, #ed2d83 0%, #ea007d 100%);
+                background: -webkit-linear-gradient(top, #ed2d83 0%,#ea007d 100%);
+                background: linear-gradient(to bottom, #ed2d83 0%,#ea007d 100%);
                 animation: pulse 1.5s infinite;
                 -webkit-animation: pulse 1.5s infinite;
+            }
+            #register_form .pink-button:hover {
+                opacity: 1;
+                background: #ed2d83;
+                background: -moz-linear-gradient(top, #ed2d83 0%, #c10060 100%);
+                background: -webkit-linear-gradient(top, #ed2d83 0%,#c10060 100%);
+                background: linear-gradient(to bottom, #ed2d83 0%,#c10060 100%);
             }
             #scroll_notify {
                 position: fixed;
