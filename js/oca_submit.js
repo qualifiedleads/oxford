@@ -49,8 +49,8 @@ $(document).ready(function(){
             return format;
         }
 
-        function inf_form_submit(data){
-            var inf_frame = frames['inf_form_iframe'];
+        function inf_form_submit(data,callback){
+            var inf_frame = document.getElementById('inf_form_iframe');
 
             $(inf_frame.contentDocument).find('[name="inf_field_FirstName"]').val(data.fname);
             $(inf_frame.contentDocument).find('[name="inf_field_LastName"]').val(data.lname);
@@ -66,17 +66,13 @@ $(document).ready(function(){
             }
 
             $(inf_frame.contentDocument).find('[name="inf_field_Phone1"]').val(data.phone);
-            /*
-            inf_frame.onload = function(){console.log('iframe loaded')};
-            $(inf_frame.contentDocument).find('#inf_form').submit();*/
-            console.log(data);
-            console.log(inf_frame.length);
+            
+            inf_frame.onload = function(){callback.call(window);};
+            $(inf_frame.contentDocument).find('#inf_form').submit();
         }
 
-        inf_form_submit(values_final);
-
         // Ajax submit
-        /*$.ajax({
+        $.ajax({
             url: 'http://www.oxfordcapacityanalysis.org/oca-service.action', 
             dataType: 'jsonp', 
             data: {
@@ -112,14 +108,18 @@ $(document).ready(function(){
                             goog_report_conversion('http://www.oxfordcapacityanalysis.org/questions.html');
                         }
                     });
-                    
-                    //top.location = 'http://www.oxfordcapacityanalysis.org/questions.html';
+                    function callback(){
+                        console.log('Google click track function triggered.');
+                        goog_report_conversion('http://www.oxfordcapacityanalysis.org/questions.html');
+                    }
+                    inf_form_submit(JSON.parse(values_final),callback);
                 } 
             } 
-        });*/
-        //$('#register_form input').prop("disabled",true);
-        //$('#register_form select').prop("disabled",true);
-        //$('#register_form button[type="submit"]').text("Wait...").prop("disabled",true);
+        });
+
+        $('#register_form input').prop("disabled",true);
+        $('#register_form select').prop("disabled",true);
+        $('#register_form button[type="submit"]').text("Wait...").prop("disabled",true);
     }
     $("#register_form").paminta(submit_fx);
 });
