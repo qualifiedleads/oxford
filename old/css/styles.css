@@ -96,11 +96,15 @@ header #logo {
     z-index: -1;
     clear: both;
 }
-header #logo img {
+header #logo_full {
     width: 100%;
 }
 header #logo_spacer {
     height: 100px;
+}
+header #logo_icon,
+header #logo_text {
+    display: none;
 }
 header h1 {
     width: 100%;
@@ -164,11 +168,31 @@ footer .footer-links a:hover {
         text-align: center;
     }
 }
-@media (max-width: 434px) {
-    #logo img:after {
-        content: "";
+@media (max-width: 480px) {
+    header #logo {
+        left: 0px;
+        z-index: 2;
     }
-    #logo img {
-        vertical-align: bottom;
+    header #logo_full {
+        display: none;
     }
+    header #logo_icon {
+        width: 45px;
+        display: inline-block;
+    }
+    header #logo_spacer {
+        height: 0px;
+    }
+    header #title_oxford_text {
+        display: none;
+    }
+    header #title_personality_text {
+        color: black !important;
+    }
+    header h1 {
+        height: 50px;
+        line-height: 40px;
+        padding-left: 40px;
+    }
+    
 }

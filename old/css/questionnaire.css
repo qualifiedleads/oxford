@@ -279,9 +279,6 @@ section.questionnaire {
 
 /* Responsive */
 @media(max-width: 480px) {
-    header #logo img {
-        width: 60%;
-    }
     .questions-block li {
         font-size: 130% !important;
     }
@@ -334,15 +331,6 @@ section.questionnaire {
     }
 }
 @media(max-width: 425px) {
-    header #logo_spacer {
-        height: 50px;
-    }
-    header #logo {
-        left: -3.3%;
-    }
-    header #logo img {
-        width: 50%;
-    }
     header, main, footer {
         padding-left: 8px;
         padding-right: 8px;
@@ -359,7 +347,6 @@ section.questionnaire {
         top: 55px;
     }
 }
-
 @media(max-width: 350px) {
     .choices-block ul li.answer-yes {
         left: 10px;
