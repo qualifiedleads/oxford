@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <title>Free Personality Test - Oxford Capacity Analysis - Church of Scientology</title>
+        <link rel="stylesheet" href="css/normalize.css" />
+        <link rel="stylesheet" href="css/styles.css" />
+        <script src="js/jquery-2.2.1.min.js"></script>
+        <style>
+            section.questionnaire {
+                overflow: visible;
+            }
+            .questions-block,
+            .questions-block ul
+            {
+                width: 90%;
+                min-height: 300px;
+                margin: auto;
+                padding: 0px 15px;
+                display: block;
+                position: relative;
+                list-style-type: none;
+                box-sizing: border-box;
+                overflow: visible;
+            }
+            .questions-block li {
+                width: 100%;
+                min-height: 300px;
+                position: absolute;
+                left: 0;
+                top: 0;
+                text-align: center;
+                transition: all 0.5s ease;
+                font-size: 160%;
+                line-height: 300px;
+            }
+            .questions-block li > div {
+                line-height: normal;
+                display: inline-block;
+                vertical-align: middle;
+            }
+            .questions-block li div.complete img {
+                margin-top: 15px;
+                width: 50px;
+            }
+            .questions-block li.right {
+                transform:translateX(100%);
+                opacity: 0;
+            }
+            .questions-block li.left {
+                transform:translateX(-100%);
+                opacity: 0;
+            }
+            .questions-block li.center {
+                transform:translateX(0%);
+                opacity: 1;
+            }
+            .questions-block li span.number {
+                font-size: 165%;
+                font-weight: bold;
+                color: #336699;
+                vertical-align: bottom;
+            }
+            .questions-block .arrow-prev,
+            .questions-block .arrow-next
+            {
+                width: 25px;
+                min-height: 300px;
+                line-height: 300px;
+                position: absolute;
+                top: 0px;
+                cursor: pointer;
+            }
+            .questions-block .arrow-prev > div.button,
+            .questions-block .arrow-next > div.button
+            {
+                width: 25px;
+                height: 44px;
+                line-height: normal;
+                background-image: url('images/autosprite-sprite.png');
+                vertical-align: middle;
+                display: inline-block;
+            }
+            .questions-block .arrow-prev {
+                left: 0;
+            }
+            .questions-block .arrow-next {
+                right: 0;
+            }
+            .questions-block .arrow-prev > div.button {
+                background-position: 0px 0px;
+            }
+            .questions-block .arrow-next > div.button {
+                background-position: 0px -44px;
+            }
+            .choices-block {
+                height: 120px;
+                line-height: 120px;
+                text-align: center;
+            }
+            .choices-block > div {
+                display: inline-block;
+                vertical-align: middle;
+                margin: auto;
+                line-height: normal;
+            }
+            .choices-block ul {
+                width: 327px;
+                margin: auto;
+                list-style-type: none;
+                display: table;
+            }
+            .choices-block ul li {
+                width: 109px;
+                height: 43px;
+                line-height: normal;
+                background-image: url("images/oca-yes-maybe-no-sprite_en.png");
+                display: table-cell;
+                cursor: pointer;
+            }
+            .choices-block ul li.answer-yes {
+                background-position: 0px 0px;
+            }
+            .choices-block ul li.answer-yes:hover {
+                background-position: 0px -45px;
+            }
+            .choices-block ul li.answer-yes.active {
+                background-position: 0px -90px;
+            }
+            .choices-block ul li.answer-maybe {
+                background-position: -109px 0px;
+            }
+            .choices-block ul li.answer-maybe:hover {
+                background-position: -109px -45px;
+            }
+            .choices-block ul li.answer-maybe.active {
+                background-position: -109px -90px;
+            }
+            .choices-block ul li.answer-no {
+                background-position: -218px 0px;
+            }
+            .choices-block ul li.answer-no:hover {
+                background-position: -218px -45px;
+            }
+            .choices-block ul li.answer-no.active {
+                background-position: -218px -90px;
+            }
+            .progress-block {
+                width: 100%;
+                height: 100px;
+                line-height: 100px;
+            }
+            .progress-block > div {
+                width: 100%;
+                display: inline-block;
+                line-height: normal;
+                vertical-align: bottom;
+                text-align: center;
+            }
+            .progress-block div.label {
+                letter-spacing: 5px;
+                font-size: 70%;
+                line-height: 2;
+            }
+            .progress-block #progress_bar {
+                padding: 15px 20px;
+                background-color: #CCD9E5;
+            }
+            .progress-block .progress-bar {
+                width: 100%;
+                margin: auto;
+                border: 1px solid #336699;
+                border-radius: 4px;
+                background-color: white;
+            }
+            .progress-block .progress-load {
+                width: 0%;
+                height: 10px;
+                background-color: #336699;
+                position: relative;
+                border: 1px solid white;
+                border-radius: 4px;
+                transition: all 500ms ease;
+            }
+            .progress-block .progress-load:after {
+                content: "";
+                width: 0;
+                height: 0;
+                line-height: 0;
+                border: 10px solid transparent;
+                position: absolute;
+                right: -8px;
+                top: -12px;
+                border-top-color: #336699;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <div id="logo">
+                <img src="images/logo_en.png" />
+            </div>
+            <div id="logo_spacer"></div>
+            <h1>Oxford Capacity Analysis<span id="personality_text"> | Personality Test</span></h1>
+        </header>
+        <main>
+            <section class="questionnaire">
+                <div class="questionnaire-box">
+                    <div class="questions-block">
+                        <ul>
+                            <li class="center"><div><span class="number">1.</span> Do you make thoughtless remarks or accusations which later you regret?</div></li>
+                            <li class="right"><div><span class="number">2.</span> When others are getting rattled, do you remain fairly composed?</div></li>
+                            <li class="right"><div><span class="number">3.</span> Do you browse through railway timetables, directories, or dictionaries just for pleasure?</div></li>
+                            <li class="right"><div><span class="number">4.</span> When asked to make a decision, would you be swayed by your like or dislike of the personality involved?</div></li>
+                            <li class="right"><div><span class="number">5.</span> Do you intend two or less children in your family even though your health and income will permit more?</div></li>
+                            <li class="right"><div><span class="number">6.</span> Do you get occasional twitches of your muscles, when there is no logical reason for it?</div></li>
+                            <li class="right"><div><span class="number">7.</span> Would you prefer to be in a position where you did not have the responsibilities of making decisions?</div></li>
+                            <li class="right"><div><span class="number">8.</span> Are your actions considered unpredictable by other people?</div></li>
+                            <li class="right"><div><span class="number">9.</span> Do you consider more money should be spent on social security?</div></li>
+                            <li class="right"><div><span class="number">10.</span> Do other people interest you very much?</div></li>
+                            <li class="right"><div><span class="number">11.</span> Is your voice monotonous, rather than varied in pitch?</div></li>
+                            <li class="right"><div><span class="number">12.</span> Do you normally let the other person start the conversation?</div></li>
+                            <li class="right"><div><span class="number">13.</span> Are you readily interested in other people's conversations?</div></li>
+                            <li class="right"><div><span class="number">14.</span> Would the idea of inflicting pain on game, small animals or fish prevent you from hunting or fishing?</div></li>
+                            <li class="right"><div><span class="number">15.</span> Are you often impulsive in your behavior?</div></li>
+                            <li class="right">
+                                <div class="complete">
+                                    <div>Processing your answers.</div>
+                                    <div><img src="images/loader.svg" /></div>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="arrow-prev">
+                            <div class="button"></div>
+                        </div>
+                        <div class="arrow-next">
+                            <div class="button"></div>
+                        </div>
+                    </div>
+                    <div class="choices-block">
+                        <div>
+                            <ul>
+                                <li class="answer-yes" data-ans="y"></li>
+                                <li class="answer-maybe" data-ans="m"></li>
+                                <li class="answer-no" data-ans="n"></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="progress-block">
+                        <div>
+                            <div class="label">— TEST PROGRESS —</div>
+                            <div id="progress_bar">
+                                <div class="progress-bar">
+                                    <div class="progress-load"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <script src="js/questionnaire.js"></script>
+            </section>
+        </main>
+        <footer style="clear:both">
+            <div class="copyright">
+                &copy; 2016 Church of Scientology. All Rights Reserved.
+            </div>
+            <nav class="footer-links">
+                <a href="privacy-notice.html">Privacy Notice</a>
+                -
+                 <a href="terms-of-use.html">Terms of Use</a>
+                -
+                 <a href="legal-notice.html">Legal Notice</a>
+                -
+                 <a href="#">Languages</a>
+            </nav>
+        </footer>
+        <script>
+            
+        </script>
+    </body>
+</html>
