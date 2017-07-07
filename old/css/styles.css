@@ -102,8 +102,10 @@ header #logo_full {
 header #logo_spacer {
     height: 100px;
 }
-header #logo_icon,
-header #logo_text {
+header #logo_icon {
+    width: 45px;
+    position: relative;
+    top: 2.5px;
     display: none;
 }
 header h1 {
@@ -173,18 +175,15 @@ footer .footer-links a:hover {
         left: 0px;
         z-index: 2;
     }
-    header #logo_full {
+    header #logo_full,
+    header #title_oxford_text {
         display: none;
     }
     header #logo_icon {
-        width: 45px;
         display: inline-block;
     }
     header #logo_spacer {
         height: 0px;
-    }
-    header #title_oxford_text {
-        display: none;
     }
     header #title_personality_text {
         color: black !important;
