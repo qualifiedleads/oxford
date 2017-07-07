@@ -111,27 +111,23 @@ section.questionnaire {
     display: inline-block;
     cursor: pointer;
     -webkit-tap-highlight-color: transparent;
+    margin-left: -3px;
+    margin-right: -3px;
     position: relative;
-    background-image: linear-gradient(bottom, rgb(0,116,163) 30%, rgb(0,116,163) 63%, rgb(85,146,191) 87%);
-    background-image: -o-linear-gradient(bottom, rgb(0,116,163) 30%, rgb(0,116,163) 63%, rgb(85,146,191) 87%);
-    background-image: -moz-linear-gradient(bottom, rgb(0,116,163) 30%, rgb(0,116,163) 63%, rgb(85,146,191) 87%);
-    background-image: -webkit-linear-gradient(bottom, rgb(0,116,163) 30%, rgb(0,116,163) 63%, rgb(85,146,191) 87%);
-    background-image: -ms-linear-gradient(bottom, rgb(0,116,163) 30%, rgb(0,116,163) 63%, rgb(85,146,191) 87%);
-    background-image: -webkit-gradient( linear, left bottom, left top, color-stop(0.3, rgb(0,116,163)), color-stop(0.63, rgb(0,116,163)), color-stop(0.87, rgb(85,146,191)));
+    background: #5386b9;
+    background-image: -webkit-linear-gradient(top, #5386b9, #336699);
+    background-image: -moz-linear-gradient(top, #5386b9, #336699);
+    background-image: -ms-linear-gradient(top, #5386b9, #336699);
+    background-image: -o-linear-gradient(top, #5386b9, #336699);
+    background-image: linear-gradient(to bottom, #5386b9, #336699);
 }
-.choices-block ul li:hover {
-    background-image: linear-gradient(bottom, rgb(17,61,143) 7%, rgb(45,98,204) 54%, rgb(99,139,219) 77%);
-    background-image: -o-linear-gradient(bottom, rgb(17,61,143) 7%, rgb(45,98,204) 54%, rgb(99,139,219) 77%);
-    background-image: -moz-linear-gradient(bottom, rgb(17,61,143) 7%, rgb(45,98,204) 54%, rgb(99,139,219) 77%);
-    background-image: -webkit-linear-gradient(bottom, rgb(17,61,143) 7%, rgb(45,98,204) 54%, rgb(99,139,219) 77%);
-    background-image: -ms-linear-gradient(bottom, rgb(17,61,143) 7%, rgb(45,98,204) 54%, rgb(99,139,219) 77%);
-    background-image: -webkit-gradient( linear, left bottom, left top, color-stop(0.07, rgb(17,61,143)), color-stop(0.54, rgb(45,98,204)), color-stop(0.77, rgb(99,139,219)));
-}
-.choices-block ul li:first-child {
+.choices-block ul li.answer-yes {
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
 }
-.choices-block ul li:first-child:after {
+.choices-block ul li.answer-yes:after,
+.choices-block ul li.answer-maybe:after
+ {
     width: 1px;
     height: 34px;
     content : "";
@@ -139,14 +135,14 @@ section.questionnaire {
     position: absolute;
     right: -0px;
     top: 4px;
-    background-color: white;
-    opacity: 0.5;
+    background-color: rgba(255,255,255,0.3);
 }
-.choices-block ul li:last-child {
+.choices-block ul li.answer-no {
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
 }
-.choices-block ul li:last-child:before {
+.choices-block ul li.answer-no:before,
+.choices-block ul li.answer-maybe:before {
     width: 1px;
     height: 34px;
     content : "";
@@ -154,21 +150,22 @@ section.questionnaire {
     position: absolute;
     left: -0px;
     top: 4px;
-    background-color: white;
-    opacity: 0.5;
+    background-color: rgba(0,0,0,0.3);
 }
 .choices-block ul li.active {
-    -webkit-box-shadow: inset 4px 4px 15px 0px rgba(50, 50, 50, 0.5);
-    -moz-box-shadow:    inset 4px 4px 15px 0px rgba(50, 50, 50, 0.5);
-    box-shadow:         inset 4px 4px 15px 0px rgba(50, 50, 50, 0.5);
+    font-weight: bold;
+    color: #134659;
+    text-shadow: 0.5px 0.5px 1px rgba(255, 255, 255, 0.9);
+    -webkit-box-shadow: inset 2px 2px 8px 2px rgba(50, 50, 50, 0.5);
+    -moz-box-shadow:    inset 2px 2px 8px 2px rgba(50, 50, 50, 0.5);
+    box-shadow:         inset 2px 2px 8px 2px rgba(50, 50, 50, 0.5);
 }
-.choices-block ul li.active:hover {
-    background-image: linear-gradient(bottom, rgb(0,116,163) 30%, rgb(0,116,163) 63%, rgb(85,146,191) 87%);
-    background-image: -o-linear-gradient(bottom, rgb(0,116,163) 30%, rgb(0,116,163) 63%, rgb(85,146,191) 87%);
-    background-image: -moz-linear-gradient(bottom, rgb(0,116,163) 30%, rgb(0,116,163) 63%, rgb(85,146,191) 87%);
-    background-image: -webkit-linear-gradient(bottom, rgb(0,116,163) 30%, rgb(0,116,163) 63%, rgb(85,146,191) 87%);
-    background-image: -ms-linear-gradient(bottom, rgb(0,116,163) 30%, rgb(0,116,163) 63%, rgb(85,146,191) 87%);
-    background-image: -webkit-gradient( linear, left bottom, left top, color-stop(0.3, rgb(0,116,163)), color-stop(0.63, rgb(0,116,163)), color-stop(0.87, rgb(85,146,191)));
+.choices-block ul li.active:before,
+.choices-block ul li.active:after {
+    opacity: 0 !important;
+}
+.choices-block ul li.active + li:before {
+    background-color: rgba(255,255,255,0.3);
 }
 .hint-block-kbd .hint-box {
     max-width: 250px;
@@ -238,6 +235,17 @@ section.questionnaire {
     -webkit-transition: all 500ms ease;
     transition: all 500ms ease;
 }
+.progress-block .progress-load:after {
+    content: "";
+    width: 0;
+    height: 0;
+    line-height: 0;
+    border: 10px solid transparent;
+    position: absolute;
+    right: -8px;
+    top: -12px;
+    border-top-color: #336699;
+}
 
 #questionnaire_intro {
     width: 100%;
@@ -294,4 +302,32 @@ section.questionnaire {
     .hint-block-kbd {
         display: none;
     }
+        .progress-block {
+        height: auto;
+        line-height: auto;
+    }
+}
+@media(max-width: 350px) {
+    header #logo_spacer {
+        height: 80px;
+    }
+    .choices-block ul li:before,
+    .choices-block ul li:after,
+    .choices-block ul li.active:before,
+    .choices-block ul li.active:after {
+        display: none !important;
+    }
+    .choices-block ul li {
+        border-radius: 5px;
+    }
+    .choices-block ul li.answer-yes {
+        left: 10px;
+    }
+    .choices-block ul li.answer-maybe {
+        top: 55px;
+    }
+    .choices-block ul li.answer-no {
+        right: 10px;
+    }
+
 }
