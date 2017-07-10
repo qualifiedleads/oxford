@@ -3,6 +3,11 @@ questionnaire = {
     items : ($(".questions-block li").length - 1),
     active : $(".questions-block li.center"),
     answered : 0,
+    init: function(){
+        $(".questions-block li").each(function(index){
+            console.log(index);
+        });
+    },
     prev : function(){
         var active = $(".questions-block li.center");
         var prev = active.prev();

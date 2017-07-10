@@ -235,17 +235,6 @@ section.questionnaire {
     -webkit-transition: all 500ms ease;
     transition: all 500ms ease;
 }
-.progress-block .progress-load:after {
-    content: "";
-    width: 0;
-    height: 0;
-    line-height: 0;
-    border: 10px solid transparent;
-    position: absolute;
-    right: -8px;
-    top: -12px;
-    border-top-color: #336699;
-}
 
 #questionnaire_intro {
     width: 100%;
