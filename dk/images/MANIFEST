@@ -1,0 +1,21 @@
+This zip file contains optimized resources for http://lat.com.es/oxford/. The optimized resources are listed below in the format of: 
+filename: url
+
+Note: We only include up to 10 MB of optimized contents. If the
+optimized contents of your page are larger than 10 MB, we list them in
+this file too, with 'NOT INCLUDED' to indicate those URLs require
+further optimization.
+
+css/normalize.css: http://lat.com.es/oxford/css/normalize.css
+css/styles.css: http://lat.com.es/oxford/css/styles.css
+css/index.css: http://lat.com.es/oxford/css/index.css
+css/questionnaire.css: http://lat.com.es/oxford/css/questionnaire.css
+js/jquery-2.2.1.min.js: http://lat.com.es/oxford/js/jquery-2.2.1.min.js
+js/questionnaire.js: http://lat.com.es/oxford/js/questionnaire.js
+image/step-1.jpg: http://lat.com.es/oxford/images/step-1.jpg
+image/step-2.jpg: http://lat.com.es/oxford/images/step-2.jpg
+image/step-3.jpg: http://lat.com.es/oxford/images/step-3.jpg
+image/success-1.jpg: http://lat.com.es/oxford/images/success-1.jpg
+image/success-2.jpg: http://lat.com.es/oxford/images/success-2.jpg
+image/success-3.jpg: http://lat.com.es/oxford/images/success-3.jpg
+image/success-4.jpg: http://lat.com.es/oxford/images/success-4.jpg
