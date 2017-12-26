@@ -86,7 +86,7 @@ $(document).ready(function(){
                             goog_report_conversion('https://www.oca.scientology.org.il/questions.html');
                         }
                     });
-                    top.location = 'https://www.oca.scientology.org.il/questions.html';
+                    // top.location = 'https://www.oca.scientology.org.il/questions.html';
                 } 
             } 
         });
