@@ -68,7 +68,7 @@ $(document).ready(function(){
                 else{
                     $.ajax({
                         method: 'GET',
-                        url: 'https://script.google.com/macros/s/AKfycbwYlNqqgYhKDq9UNm0nEdN04UR__UyTgl6zfVigWHADpfdoCCJl/exec',
+                        url: 'https://script.google.com/macros/s/AKfycbz3_Kvq_Kwr1PkUXG2T1GfMJ7x3yx5Y3Pz_IKI1ajtlIEhETln7/exec',
                         data: values_raw+'&date='+getLocaleDateTime(),
                         error: function(jqXHR,textStatus,errorThrown){
                             //console.log("Failed to load content.", "Error "+jqXHR.status);
