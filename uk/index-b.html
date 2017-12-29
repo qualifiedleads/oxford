@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title>Oxford Personality Test</title>
+    <link rel="stylesheet" href="css/combined-styles-b.min.css" />
+    <style type="text/css">
+        @import url('https://fonts.googleapis.com/css?family=PT+Serif');
+        section.the-real-you {
+            overflow: auto;
+        }
+
+        section.the-real-you ul {
+            display: block;
+            width: 50%;
+            margin-bottom: 10px;
+            float: left;
+        }
+
+        section.the-real-you li {
+            margin-bottom: 5px;
+            list-style-type: none;
+            padding-left: 20px;
+        }
+
+        section.the-real-you li:before {
+            content: '\26AB';
+            position: relative;
+            left: -15px;
+        }
+
+        section.what-makes-it-unique .figure {
+            width: 290.5px;
+            color: #1d1d1d;
+            float: right;
+            padding: 8px;
+            border: 1px dotted #000;
+            margin-right: 5px;
+            margin-top: 15px;
+            margin-bottom: 15px;
+            font-style: italic;
+            font-size: 18px;
+            line-height: 1.5;
+        }
+
+        section.what-makes-it-unique .figure .title {
+            display: inline;
+            color: #1d1d1d;
+            font-family: 'PT Serif', serif;
+        }
+
+        section.what-makes-it-unique .figure img {
+            float: right;
+            width: 35%;
+            margin-left: 5px;
+        }
+
+        section.what-makes-it-unique .figure .body {
+            margin-top: 5px !important;
+            font-family: 'PT Serif', serif;
+        }
+
+        @media (max-width: 650px) {
+            section.the-real-you ul {
+                width: 100%;
+            }
+            section.the-real-you ul.col-left {
+                margin-bottom: 0px !important;
+            }
+            section.the-real-you ul.col-right {
+                margin-top: 0px !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div id="logo">
+            <img src="images/logo_en.png" />
+        </div>
+        <div id="logo_spacer"></div>
+        <h1>Personality Testing
+            <span id="personality_text"> -
+                <span class="font-blue"></span>The Oxford Capacity Analysis</span>
+        </h1>
+    </header>
+    <main>
+        <nav class="header-docker">
+            <ul>
+                <li>
+                    <a href="#test_description">the 'Oxford test'</a>
+                </li>
+                <li>
+                    <a href="#how-it-works">How it works</a>
+                </li>
+                <li>
+                    <a href="#personal-success">Testimonials</a>
+                </li>
+            </ul>
+        </nav>
+        <section class="description">
+            <div id="test_description">
+                <h3>Unlock The Secrets Of Your Past, Present & Future with Scientific Accuracy</h3>
+                <br>
+                <h2>Personality Test:
+                    <strike>$425</strike> now FREE</h2>
+                <h5>(subject to availability)</h5>
+                <div class="pie-chart">
+                    <div class="chart">
+                        <img src="images/head.jpg" />
+                    </div>
+                    <div class="chart-link">
+                        <!--<a href="what-makes-oca-unique.html">Find out more&nbsp;<span class="arrow-right-small"></span></a>-->
+                    </div>
+                </div>
+                <p>What does your future hold?
+                    <br> What forces are stopping you from achieving your dreams?
+                    <br> The Oxford Capacity Analysis personality test has helped many individuals find out the answer to that
+                    exact question. What exactly determines your future?. This test is unique because it will give you an
+                    <b>accurate picture of YOU</b>. Simply click on the multiple-choice questions and you will get to see exactly
+                    what your future holds.</p>
+                <p>You are a unique individual with your own personality. Discover the personality traits that will help
+                    <b>you</b> to achieve your true potential. Don't let others hold you back from your true potential.</p>
+            </div>
+            <div id="test_form">
+                <div class="form-box">
+                    <div class="form-content">
+                        <form id="register_form" method="get" novalidate="true" onsubmit="return false">
+                            <input type="hidden" name="fname" value="" />
+                            <input type="hidden" name="lname" value="" />
+                            <input type="hidden" name="country" value="0" />
+                            <input type="hidden" name="countryname" value="0" />
+                            <input type="hidden" name="zipcode" value="0" />
+                            <input type="hidden" name="orgid" value="dkd" />
+                            <input type="hidden" name="origin" value="splitB" />
+                            <div class="form-field">
+                                <label>Name*</label>
+                                <br>
+                                <input type="text" id="full_name" placeholder="First & Last" data-paminta="first_last_name" />
+                            </div>
+                            <div class="form-field">
+                                <label>Email*</label>
+                                <br>
+                                <input type="email" name="email" placeholder="@email" data-paminta="email" />
+                            </div>
+                            <div class="form-field">
+                                <div class="field-group">
+                                    <label class="col col-left">Age*</label>
+                                    <div class="col col-right">
+                                        <input type="number" name="age" placeholder="your age" data-paminta="text" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-field">
+                                <div class="field-group">
+                                    <label class="col col-left"></label>
+                                    <div class="col col-right">
+                                        <label class="box">
+                                            <input type="radio" name="gender" value="female" checked="true" /> Female</label>
+                                        <!--
+                                            -->
+                                        <label class="box">
+                                            <input type="radio" name="gender" value="male" /> Male</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-field">
+                                <div class="field-group">
+                                    <label class="col col-left">Cell</label>
+                                    <div class="col col-right">
+                                        <input type="tel" name="phone" placeholder="cell phone" data-paminta="text" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-field">
+                                <button type="submit" class="pink-button">START TEST</button>
+                            </div>
+                            <div class="security-seal">
+                                <div>
+                                    <img src="images/secr.png">
+                                </div>
+                                <div>
+                                    <img src="images/mcafee.png">&nbsp;
+                                    <img src="images/symantec.png">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="what-makes-it-unique">
+            <h2>WHAT CAN THE OXFORD TEST
+                <b>DO FOR YOU?</b>
+            </h2>
+            <div class="figure">
+
+                <img src="images/cynthia.jpg">
+                <p class="body">
+                    "I was very insecure, and wondered why I was not succeeding in life. Now I have a lot of certainty. Now I know me!"
+                    <br>
+                </p>
+                <h4 class="title">Cynthia</h4>
+            </div>
+            <p>
+                The test displays your personality in 10 personality traits.
+
+            </p>
+            <p>
+                These 10 traits
+                <i>partially</i> describe you. The remaining part is found by viewing the connection between the traits, meaning:
+                the up-and-down of the lines of the graph show you
+                <b>the real you</b>.
+            </p>
+            <p>
+                This test and its accompanying consultation are a FREE public service - no purchase necessary. Usual price $435.
+            </p>
+            <div class="oca-graph-block">
+                <div class="oca-graph" style="margin-bottom:5px;float:none;width:100%;max-width:100% !important">
+                    <img src="images/graph-oca03_en.jpg" />
+                </div>
+                <div class="oca-note" style="width:auto!important;height:auto!important;float:none;">
+                    <div class="text font-blue" style="width:auto!important;max-width:100%;height:auto!important;float:none;text-align:center;">
+                        “The Oxford test shows a “package” of attitudes, behavioral patterns and emotional responses to environmental situations.
+                        It can also be called a “reactivity” analysis, as it shows HOW the person will react in and against
+                        her environment, under specific circumstances – such as: stress or high pressure in life, decision-making
+                        process, painful experiences, conflicts, relationships, etc.”
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="the-real-you">
+            <h2>
+                <b>Discover</b> your Future:</h2>
+            <ul class="col-left">
+                <li>Stability</li>
+                <li>Happiness</li>
+                <li>Composure</li>
+                <li>Certainty</li>
+                <li>Activeness</li>
+
+            </ul>
+            <ul class="col-right">
+                <li>Assertiveness</li>
+                <li>Responsible Behavior</li>
+                <li>Ability to Correctly Estimate</li>
+                <li>Appreciation</li>
+                <li>Communication Level</li>
+            </ul>
+        </section>
+        <section id="how-it-works" class="how-it-works">
+            <h2>HOW IT
+                <b>WORKS</b>
+            </h2>
+            <ul>
+                <li>
+                    <div class="text">
+                        <h4>Step 1:
+                            <span class="step-text">TAKE THE TEST ON-LINE</span>
+                        </h4>
+                        <p>
+                            <b>It's EASY</b>. Click Start and you will be taken to the Testing area.
+                            <br> There are 200 multiple-choice questions, which usually take between 30-45mins.
+                            <br>
+
+                        </p>
+                    </div>
+                    <div class="image">
+                        <img src="images/step-1.jpg" />
+                    </div>
+                </li>
+                <li>
+                    <div class="text">
+                        <h4>Step 2:
+                            <span class="step-text">RESULTS ALGORITHM</span>
+                        </h4>
+                        <p>The Oxford Analyis looks at millions of combinations of possible answers. If you have answered truthfully
+                            you will gain an incredible insight into your own life!
+                            <br> You will see the completely unique person that is YOU!
+                            <br> You will see Your past, present & future in a whole new light</p>
+                    </div>
+                    <div class="image">
+                        <img src="images/algo3.jpg" />
+                    </div>
+                </li>
+                <li>
+                    <div class="text">
+                        <h4>Step 3:
+                            <span class="step-text">TEST READING</span>
+                        </h4>
+                        <p>
+                            When the test has been computed you will receive a call from us to invite you to one of our test centers. If you have received
+                            this test as a complimentary gift, you can visit us at:
+                            <br>
+                            <br> 1300 East 8th Avenue, Ybor City, Tampa, FL. - (813) 872-0722
+                            <br> 102 North Collins Street, Plant City, FL. - (813) 752-0148
+                            <br> 336 1st Avenue North, St. Petersbrug, FL. - (727) 895-5404
+                            <br> 120 Giralda Ave, Coral Gables, FL. - 305-445-7812
+                            <br> 50 SE 1st Ave, Ocala, FL. - 352-390-8535
+                            <br> or any of our other Florida locations
+                            <br> Any of the above locations can provide you a FREE, personal consultation.
+                        </p>
+                    </div>
+                    <div class="image">
+                        <img src="images/step-3.jpg" />
+                    </div>
+                </li>
+            </ul>
+        </section>
+        <section id="personal-success" class="personal-success">
+            <h2>Real People
+                <b>Real Successes</b>
+            </h2>
+            <ul>
+                <li>
+                    <div class="image">
+                        <img src="images/success-3.jpg" />
+                    </div>
+                    <!--
+						-->
+                    <div class="text">
+                        <h4> Cynthia, Hairdresser: </h4>
+                        <p>
+                            <blockquote>
+                                “I was very insecure, and wondered why I was not succeeding in life. Now I have a lot of certainty. I can deal with people
+                                better and can help them better. Now I know me!” — Cynthia
+                            </blockquote>
+                        </p>
+                    </div>
+                </li>
+                <li>
+                    <div class="image">
+                        <img src="images/wilman.jpg" />
+                    </div>
+                    <!--
+                        -->
+                    <div class="text">
+                        <h4> Wilman, Soccer Coach: </h4>
+                        <p>
+                            <blockquote>"I find joy and humor in a lot more things now!"
+                            </blockquote>
+                        </p>
+                    </div>
+                </li>
+                <li>
+                    <div class="image">
+                        <img src="images/success-2.jpg" />
+                    </div>
+                    <!--
+                        -->
+                    <div class="text">
+                        <h4> Daniella: </h4>
+                        <p>
+                            <blockquote>
+                                “With what I learned I have been able to succeed in my field, at my job, and I have to say that it has really helped me to
+                                achieve my dreams, and achieve them in the best way possible.” — Daniella
+                            </blockquote>
+                        </p>
+                    </div>
+                </li>
+                <li>
+                    <div class="image">
+                        <img src="images/success-4.jpg" />
+                    </div>
+                    <!--
+                        -->
+                    <div class="text">
+                        <h4> Shawn: </h4>
+                        <p>
+                            <blockquote>
+                                “I’m very much an outdoors, rough and tumble kind of guy. Now my interaction with people is tremendously better. My wife
+                                and I get along amazingly. Day-to-day life is a joy. There’s nothing that we don’t seem to
+                                be able to handle now.” — Shawn
+                            </blockquote>
+                        </p>
+                    </div>
+                </li>
+            </ul>
+        </section>
+        <section class="what-makes-it-unique">
+            <h2>WHY IS IT FREE?</b>
+            </h2>
+            <p>
+                We provide some Free tests each month, to a select few, as a way to introduce ourselves to you and grow our community in
+                the beautiful State of Florida.
+                <br> If you have been helped by the Oxford test you are welcome to enquire about our extension course, priced
+                at $73.79,
+                <b>but there is absolutely NO OBLIGATION to do so</b>.
+            </p>
+            <p>
+                Subject to availability, this test and the consultation are a FREE public service - no purchase necessary. Usual price $435.
+            </p>
+            <div class="oca-graph-block">
+                <div class="oca-graph">
+                    <img src="images/graph.png" />
+                </div>
+                <div class="oca-note">
+                    <div class="text font-blue">
+                        Experts say: "most people only use 10% of their brain’s potential. What if there was a way to unlock the other 90%?"
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="cta-block">
+            <a href="#test_form" class="cta-button">Start Test</a>
+        </section>
+    </main>
+    <footer style="clear:both">
+        <div class="copyright">
+            &copy; 2017 Church of Scientology. All Rights Reserved.
+        </div>
+        <nav class="footer-links">
+            <a href="privacy-notice.html">Privacy Notice</a>
+            -
+            <a href="terms-of-use.html">Terms of Use</a>
+            -
+            <a href="legal-notice.html">Legal Notice</a>
+
+        </nav>
+    </footer>
+    <div id="scroll_notify" class="active">
+        <p>12 others are viewing this offer right now -
+            <span id="offer_timer">00:00</span>
+        </p>
+        <p>
+            <a href="#test_form">Start Your Test Now!</a>
+        </p>
+        <span class="close">x</span>
+    </div>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=PT+Sans+Narrow');
+        main section.description .form-box .form-content {
+            padding: 12px 12px 12px;
+        }
+
+        .promo-info-box {
+            text-transform: uppercase;
+            padding: 15px 8px;
+            color: white;
+            /*background-color: #006DA6;*/
+            background-color: #f2008e;
+            font-size: 20px;
+            font-family: "PT Sans Narrow", sans-serif;
+            text-align: center;
+        }
+
+        .promo-info-box #trials_count span {
+            display: inline-block;
+            background-color: rgba(0, 0, 0, 1);
+            padding: 5px;
+            vertical-align: middle;
+            margin-left: 4px;
+            border-radius: 4px;
+            color: #ff2005;
+            font-size: 16px;
+        }
+
+        .promo-info-box #trials_count span:first-child {
+            margin-left: 0px;
+        }
+
+        #register_form .pink-button {
+            border-radius: 9px;
+            color: #FFF;
+            font-size: 21px;
+            font-weight: 700;
+            opacity: .9;
+            padding: 8px 15px;
+            text-align: center;
+            border-style: none;
+            background: #ed2d83;
+            background: -moz-linear-gradient(top, #ed2d83 0%, #ea007d 100%);
+            background: -webkit-linear-gradient(top, #ed2d83 0%, #ea007d 100%);
+            background: linear-gradient(to bottom, #ed2d83 0%, #ea007d 100%);
+            /* animation: pulse 1.5s infinite; */
+            /* -webkit-animation: pulse 1.5s infinite; */
+        }
+
+        #register_form .pink-button:hover {
+            opacity: 1;
+            background: #ed2d83;
+            background: -moz-linear-gradient(top, #ed2d83 0%, #c10060 100%);
+            background: -webkit-linear-gradient(top, #ed2d83 0%, #c10060 100%);
+            background: linear-gradient(to bottom, #ed2d83 0%, #c10060 100%);
+        }
+
+        #scroll_notify {
+            position: fixed;
+            bottom: 15px;
+            left: 15px;
+            padding: 15px;
+            background-color: rgba(0, 0, 0, 0.8);
+            font-size: 14px;
+            border-radius: 5px;
+            text-align: center;
+            transition: opacity 300ms ease;
+            -webkit-transition: opacity 300ms ease;
+            display: none;
+            opacity: 0;
+            z-index: -9;
+        }
+
+        #scroll_notify.active {
+            display: block;
+            z-index: 9;
+        }
+
+        #scroll_notify span.close {
+            width: 18px;
+            height: 18px;
+            line-height: 18px;
+            font-size: 12px;
+            border-radius: 50%;
+            color: red;
+            background-color: white;
+            box-shadow: 0 0 6px rgba(0, 0, 0, 0.59);
+            position: absolute;
+            top: -9px;
+            left: -9px;
+            cursor: pointer;
+        }
+
+        #scroll_notify p:first-child {
+            color: #35c3ea;
+            margin-bottom: 4px;
+        }
+
+        #scroll_notify a {
+            color: white;
+            text-decoration: underline;
+            display: inline-block;
+        }
+
+        #scroll_notify a:hover {
+            transform: scale(1.05);
+            font-weight: bold;
+        }
+
+        .security-seal {
+            margin-top: 20px;
+        }
+
+        .security-seal img {
+            max-height: 45px;
+        }
+
+        .security-seal img:first-child {
+            margin-right: 8px;
+        }
+
+        .security-seal div {
+            text-align: center;
+        }
+
+        @-webkit-keyframes pulse {
+            from,
+            to {
+                -webkit-transform: scale3d(1, 1, 1);
+                transform: scale3d(1, 1, 1)
+            }
+            50% {
+                -webkit-transform: scale3d(1.05, 1.05, 1.05);
+                transform: scale3d(1.05, 1.05, 1.05)
+            }
+        }
+
+        @keyframes pulse {
+            from,
+            to {
+                -webkit-transform: scale3d(1, 1, 1);
+                transform: scale3d(1, 1, 1)
+            }
+            50% {
+                -webkit-transform: scale3d(1.05, 1.05, 1.05);
+                transform: scale3d(1.05, 1.05, 1.05)
+            }
+        }
+
+        section.cta-block {
+            text-align: center;
+            overflow: visible !important;
+        }
+
+        section.cta-block a.cta-button:hover {
+            background: #010b81;
+            background: -moz-linear-gradient(top, #010b81 0%, #01085f 100%);
+            background: -webkit-linear-gradient(top, #010b81 0%, #01085f 100%);
+            background: linear-gradient(to bottom, #010b81 0%, #01085f 100%);
+        }
+
+        section.cta-block a.cta-button {
+            color: white;
+            font-weight: bold;
+            text-transform: uppercase;
+            display: inline-block;
+            padding: 10px 40px;
+            animation: pulse 1.5s infinite;
+            border-radius: 8px;
+            -webkit-animation: pulse 1.5s infinite;
+            font-size: 1.4em;
+            background: #0110b4;
+            background: -moz-linear-gradient(top, #0110b4 0%, #010d92 100%);
+            background: -webkit-linear-gradient(top, #0110b4 0%, #010d92 100%);
+            background: linear-gradient(to bottom, #0110b4 0%, #010d92 100%);
+        }
+    </style>
+    <!-- Dependencies -->
+    <script src="js/jquery-2.2.1.min.js"></script>
+    <script src="js/notify.min.js"></script>
+    <script src="js/paminta.js"></script>
+    <!-- Google Code for Personality test Conversion Page In your html page, add the snippet
+        and call goog_report_conversion when someone clicks on the chosen link or button. -->
+    <script type="text/javascript">
+        /* <![CDATA[ */
+        goog_snippet_vars = function () {
+            var w = window;
+            w.google_conversion_id = 991428877;
+            w.google_conversion_label = "tCIYCPaxt20QjYLg2AM";
+            w.google_remarketing_only = false;
+        }
+        // DO NOT CHANGE THE CODE BELOW.
+        goog_report_conversion = function (url) {
+            goog_snippet_vars();
+            window.google_conversion_format = "3";
+            var opt = new Object();
+            opt.onload_callback = function () {
+                if (typeof (url) != 'undefined') {
+                    window.location = url;
+                }
+            }
+            var conv_handler = window['google_trackConversion'];
+            if (typeof (conv_handler) == 'function') {
+                conv_handler(opt);
+            }
+        }
+            /* ]]> */
+    </script>
+    <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion_async.js"></script>
+    <!-- Form submission script. -->
+    <script src="js/onsubmit.js"></script>
+    <script>
+
+    (function(){
+        var country_list, geoData;
+
+        $.when(
+
+            $.ajax('https://www.oxfordcapacityanalysis.org/lookups/country_list.html', {
+                cache: true,
+                data: {
+                    locale: 'en',
+                },
+                success: function(countries) {
+                    country_list = countries;
+                }
+            }),
+
+            $.ajax({
+                url: 'https://www.oxfordcapacityanalysis.org/gcui-globaldata/geolocate-api.action?results=10' + (getDebugIp() ? '&ip_override=' + getDebugIp() : ''),
+                dataType: 'jsonp',
+                cache: false,
+                data: {
+                    locale: "en"
+                },
+                timeout: 3000,
+                success: function(data) {
+
+                    if (!data || !data.result || data.result.status !== 'success' || !data.result.estimated_location) {
+                        window.console && console.error && console.error('ERROR: geolocation errored:');
+                        window.console && console.error && console.error(data);
+                        return;
+                    }
+
+                    geoData = data;
+             
+
+                }
+        })
+
+        ).then(
+        function(a1, a2) {
+            $("input [data-name='country']").val()
+            $("input [data-name='countryname']").val()
+            $("input [data-name='zipcode']").val()
+
+         }
+        );
+    })();
+    
+    </script>
+    <script>
+        // Header Docker
+        $(window).scroll(function () {
+            if ($(this).scrollTop() > 133) {
+                $("nav.header-docker").addClass("header-docker-fixed");
+            } else {
+                $("nav.header-docker").removeClass("header-docker-fixed");
+            }
+            if ($(this).scrollTop() > 600) {
+                $('#scroll_notify.active').css({ 'opacity': '1' })
+            } else {
+                $('#scroll_notify.active').css({ 'opacity': '0' });
+            }
+        });
+        $("nav.header-docker a").click(function () {
+            var link_id = this.href.split('#')[1];
+            var offset = $("#" + link_id).offset().top;
+            $('html,body').stop().animate({ scrollTop: offset }, '500', 'swing', null);
+        });
+        $('a[href="#test_form"]').click(function () {
+            var link_id = this.href.split('#')[1];
+            var offset = $("#" + link_id).offset().top - 25;
+            $('html,body').stop().animate({ scrollTop: offset }, '500', 'swing', null);
+        });
+        // Form country selection update.
+        $('#register_form select[name="country"]').change(function () {
+            var selected = $(this).find("option:selected")[0];
+            $('#register_form input[name="countryname"').val(selected.innerText);
+        });
+
+        // Trials remaining counter.
+        (function () {
+            var one = 0;
+            var ten = 5;
+            var hundered = 3;
+            var intervalId = setInterval(time, 5);
+            function time() {
+                one--;
+                if (one == -1) { ten -= 1; one = 0 + 9; }
+                if (ten == -1) { hundered -= 1; ten = 0 + 9; }
+                var wholeNum = hundered + '' + ten + '' + one;
+                if (wholeNum == 9) clearInterval(intervalId);
+                $('#trials_count').html('<span>' + hundered + '</span><span>' + ten + '</span><span>' + one + '</span>');
+            }
+        }());
+        // Offer timer.
+        (function () {
+            $('#scroll_notify .close').on('click', function () {
+                $('#scroll_notify').removeClass('active');
+            });
+            var seconds = 0;
+            var counter = setInterval(addTime, 1000);
+            function formatTime(pure_seconds) {
+                var minutes = Math.floor(pure_seconds / 60);
+                minutes = (String(minutes).length > 1) ? minutes : '0' + minutes;
+                var seconds = Number(pure_seconds % 60);
+                seconds = (String(seconds).length > 1) ? seconds : '0' + seconds;
+                return minutes + ':' + seconds;
+            }
+            function addTime() {
+                if (seconds < 3599) {
+                    seconds++;
+                    $('#offer_timer').html(formatTime(seconds));
+                } else {
+                    clearInterval(counter);
+                }
+            }
+        }());
+    </script>
+    <!-- Google Analytics Universal -->
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-93233090-1', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+</body>
+
+</html>
