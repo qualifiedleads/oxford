@@ -23,13 +23,18 @@ $(document).ready(function(){
         var values_array = [];
         var values_final;
 
-        for(var n in values){
-            values_array.push('"'+values[n].name+'":"'+values[n].value+'"');
-        }
 
+        for(var n in values){
+            if(values[n].name === "phone"){
+                //do nothing
+            }else{
+                values_array.push('"'+values[n].name+'":"'+values[n].value+'"');
+            }
+        }
+        
         values_final = '{'+values_array.join(',')+'}';
         values_final = JSON.stringify(JSON.parse(values_final));
-        
+        console.log(values_final);
         function getLocaleDateTime(){
             var now  = new Date();
             var YYYY = now.getFullYear();
