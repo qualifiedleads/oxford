@@ -34,7 +34,7 @@ $(document).ready(function(){
         
         values_final = '{'+values_array.join(',')+'}';
         values_final = JSON.stringify(JSON.parse(values_final));
-        console.log(values_final);
+        
         function getLocaleDateTime(){
             var now  = new Date();
             var YYYY = now.getFullYear();
